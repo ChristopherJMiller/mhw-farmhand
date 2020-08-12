@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+}
+
+.App-body {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+$low-rank: #909CC2;
+$high-rank: #FAB561;
+$master-rank: #073D74;
+
+
+.low-rank-bg {
+  background-color: $low-rank;
+
+  &:hover {
+    background-color: darken($low-rank, 10);
+  }
+
+  &-active {
+    background-color: darken($low-rank, 20);
+  }
+}
+
+.high-rank-bg {
+  background-color: $high-rank;
+
+  &:hover {
+    background-color: darken($high-rank, 10);
+  }
+
+  &-active {
+    background-color: darken($high-rank, 20);
+  }
+}
+
+.master-rank-bg {
+  background-color: $master-rank;
+  color: white !important;
+
+  &:hover {
+    background-color: darken($master-rank, 10);
+  }
+
+  &-active {
+    color: white !important;
+    background-color: darken($master-rank, 20);
+  }
+}
+
+.card {
+  color: black;
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+.App-link {
+  color: #61dafb;
+}
