@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { InputGroup, FormControl, Spinner, Card, Row, Col, ListGroup, Button } from 'react-bootstrap';
 import debounce from 'lodash/debounce'
 import useQuery from './lib/useQuery';
-import { RarityBuildType, CharmType, CharmItem, BuildType } from './lib/BuildTypes';
+import { RarityBuildType, CharmType, CharmItem } from './lib/BuildTypes';
 import { Rank, getRank } from './lib/Rank';
 import { useHistory } from 'react-router-dom';
 
@@ -59,6 +59,7 @@ const listMapper = (list: Tagged<RarityBuildType>[], selectedList: SelectedMap, 
 const tag = (item: any, tag: string): Tagged<typeof item> => [item, tag]
 
 const BuildingSearch = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loading, query, lookup, result] = useQuery()
   const [selectedItems, setSelectedItems] = useState<SelectedMap>()
   const history = useHistory()

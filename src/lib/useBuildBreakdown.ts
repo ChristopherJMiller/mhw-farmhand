@@ -1,7 +1,7 @@
-import { BuildType, CraftingMaterial, WeaponType, ArmorType, CharmType, GatheredCraftingMaterial, Monster, MonsterDrop, RewardCondition, RarityBuildType, CharmItem, CraftWithRarity } from "./BuildTypes";
+import { BuildType, CraftingMaterial, WeaponType, ArmorType, CharmType, RarityBuildType, CraftWithRarity } from "./BuildTypes";
 import {getBuildTypeURL} from './useQuery'
 import { parseWeaponResponse, parseArmorResponse, parseCharmResponse } from "./ParseResponse";
-import { useState, useEffect, DetailedReactHTMLElement } from "react";
+import { useState, useEffect } from "react";
 import { compact } from "lodash";
 
 const getDBItem = async <T>(type: BuildType, parsingFunction: (obj: any) => T, id: number): Promise<T> => {
@@ -171,30 +171,6 @@ interface MaterialInfoLookup {
   [itemID: number]: string
 }
 
-const condenseMaterialList = (list: CraftingMaterial[]): CraftingMaterial[] => {
-  const nameLut: MaterialInfoLookup = {}
-  const quantityTable: MaterialQuantityTable = {}
-
-  list.forEach((item: CraftingMaterial) => {
-    const id = item.itemID
-    if (!nameLut[id]) {
-      nameLut[id] = item.itemName
-    }
-
-    if (!quantityTable[id]) {
-      quantityTable[id] = 0
-    }
-
-    quantityTable[id] += item.quantity
-  })
-
-  return Object.keys(nameLut).map(id => Number(id)).map((id: number): CraftingMaterial => ({
-    itemID: id,
-    itemName: nameLut[id],
-    quantity: quantityTable[id]
-  }))
-}
-
 type BuildBreakdownHook = [boolean, DetailedBuildPlan | undefined]
 type BuildEntry = [BuildType, number]
 
@@ -213,8 +189,8 @@ export default (builds: BuildEntry[]): BuildBreakdownHook => {
     if (!loading) {
       setLoading(true)
       getMaterials()
-    }
-  }, [])
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []) 
 
   return [loading, result]
 }
