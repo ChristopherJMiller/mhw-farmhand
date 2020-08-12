@@ -2,6 +2,8 @@
 
 ![deploy](https://github.com/ChristopherJMiller/mhw-farmhand/workflows/deploy/badge.svg?branch=mainline)
 
+[Site Deployment](http://chrismiller.xyz/mhw-farmhand/)
+
 A utility to help map resource gathering steps for [Monster Hunter World](https://monsterhunterworld.wiki.fextralife.com/Monster+Hunter+World+Wiki).
 
 ## How to Use
