@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mhw-farmhand/precache-manifest.13d62af405038ec2864f872d2e3072e7.js"
+  "/mhw-farmhand/precache-manifest.6866fe89cbc213398295a1b839fdf9fe.js"
 );
 
 self.addEventListener('message', (event) => {
