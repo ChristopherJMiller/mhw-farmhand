@@ -139,6 +139,7 @@ const BuildingSearch = () => {
           <FormControl 
             aria-label="Large"
             aria-describedby="inputGroup-sizing-sm" 
+            placeholder="Search"
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => debouncedLookup(event.target.value)}
           />
         </InputGroup>
