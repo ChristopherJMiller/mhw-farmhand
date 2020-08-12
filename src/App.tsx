@@ -9,10 +9,10 @@ const App = () => {
     <div className="App App-body">
       <Router>
         <Switch>
-          <Route exact path='/'>
+          <Route exact path='/mhw-farmhand/'>
             <BuildingSearch />
           </Route>
-          <Route path='/build/:query'>
+          <Route path='/mhw-farmhand/:query'>
             <BuildList />
           </Route>
         </Switch>
