@@ -22,7 +22,7 @@ interface BuildStepCardProps {
 const BuildStepCard = ({stepNum, step}: BuildStepCardProps) => {
   return (
     <Card className='my-3'>
-      <Card.Header>Step {stepNum}</Card.Header>
+      <Card.Header>Step {stepNum + 1}</Card.Header>
       <Card.Body>
         <Row>
           <Col className={'text-left text-capitalize'}>
