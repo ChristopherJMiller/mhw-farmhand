@@ -101,7 +101,7 @@ const BuildingSearch = () => {
       return `${getQueryPrefix(taggedPair[1])}${id}`
     })
 
-    return `/build/${queries.join('+')}`
+    return `/mhw-farmhand/${queries.join('+')}`
   }
 
   const selectedKeys = Object.keys(ensuredSelected)

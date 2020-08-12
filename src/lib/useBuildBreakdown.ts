@@ -106,7 +106,7 @@ const getMaterialPlan = async (builds: BuildEntry[]): Promise<DetailedBuildPlan>
   const weaponIDs = weaponBuilds.map(build => build[1])
   const weaponPromises = Promise.all(weaponIDs.map(async id => await getWeaponTree(id)))
   const weaponTrees = await weaponPromises
-  const expandedWeaponTree = weaponTrees.reduce((prev, curr) => [...prev, ...curr])
+  const expandedWeaponTree = weaponTrees.length > 0 ? weaponTrees.reduce((prev, curr) => [...prev, ...curr]) : []
   const weapons = expandedWeaponTree.map((weapon): CraftWithRarity => ({
     id: weapon.id,
     type: weapon.type,

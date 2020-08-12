@@ -55,7 +55,7 @@ export const BuildList = () => {
   const stepCards = loading || !buildPlan ? null : buildPlan.map((step, index) => <BuildStepCard stepNum={index} step={step} />)
 
   return (
-    <div>
+    <div className="container">
       {stepCards}
     </div>
   )
